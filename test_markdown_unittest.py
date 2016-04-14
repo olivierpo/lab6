@@ -43,16 +43,16 @@ class TestMarkdownPy(unittest.TestCase):
         #Lines surrounded by 3 pound symbols should be wrapped in 'h3' tags
         
         self.assertEqual( 
-                run_markdown('###this should be wrapped in 3 pound tags###'),
-                '<p><h3>this should be wrapped in 3 pound tags</h3></p>')
+                run_markdown('###this should not be wrapped in 3 pound tags###'),
+                '<p><h3>this should not be wrapped in 3 pound tags</h3></p>')
  
     def test_h2(self):
         
         #Lines surrounded by 2 pound symbols should be wrapped in 'h2' tags
         
         self.assertEqual( 
-                run_markdown('##this should be wrapped in strong tags##'),
-                '<p><h2>this should be wrapped in strong tags</h2></p>')
+                run_markdown('##this should be wrapped in h2 tags##'),
+                '<p><h2>this should be wrapped in h2 tags</h2></p>')
 
 
 
@@ -62,8 +62,8 @@ class TestMarkdownPy(unittest.TestCase):
         #Lines surrounded by pound symbol should be wrapped in 'h1' tags
         
         self.assertEqual( 
-                run_markdown('#this should be wrapped in pound tags#'),
-                '<p><h1>this should be wrapped in pound tags</h1></p>')
+                run_markdown('#this should be wrapped in h1 tags#'),
+                '<p><h1>this should be wrapped in h1 tags</h1></p>')
 
     
 
